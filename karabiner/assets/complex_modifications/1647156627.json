@@ -1,0 +1,112 @@
+{
+  "title": "Swap Korean/English & swap win <-> alt for remote desktop & parallels",
+  "maintainers": ["Yun Juhyun"],
+  "rules": [
+    {
+      "description": "CapLock to Right_Alt for remote desktop & parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "key_code": "right_option"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.microsoft.rdc.macos", "com.parallels.desktop", "com.parallels.vm", "com.parallels.desktop.console", "com.parallels.winapp."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change Capitals for remote desktop & parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "mandatory": [
+                "left_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Left Command to Left Option for remote desktop & parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command"
+          },
+          "to": [
+            {
+              "key_code": "left_option"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.microsoft.rdc.macos", "com.parallels.desktop", "com.parallels.vm", "com.parallels.desktop.console", "com.parallels.winapp."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Left Option to Left Command for remote desktop & parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option"
+          },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.microsoft.rdc.macos", "com.parallels.desktop", "com.parallels.vm", "com.parallels.desktop.console", "com.parallels.winapp."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "CapLock to F19",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f19"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
